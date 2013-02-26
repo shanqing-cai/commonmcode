@@ -1,0 +1,4 @@
+function hn=getHostName(varargin)
+[ret,hostName]=system('hostname');
+hn=deblank(hostName);
+return

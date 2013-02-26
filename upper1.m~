@@ -1,0 +1,4 @@
+function str1=upper1(str0)
+    str1=str0;
+    str1(1)=upper(str1(1));
+return

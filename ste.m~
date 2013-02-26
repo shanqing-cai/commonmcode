@@ -1,0 +1,3 @@
+function se=ste(x)
+    se=std(x)/sqrt(length(x));
+return
