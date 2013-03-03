@@ -13,6 +13,10 @@ for i1 = 1 : numel(intxt)
         continue;
     end
     
+    if isequal(t_line(1), '%')
+        continue;
+    end
+    
     idx_ds = strfind(t_line, '%');
     if ~isempty(idx_ds)
         t_line = t_line(1 : idx_ds(1) - 1);
