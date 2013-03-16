@@ -11,6 +11,7 @@ end
 addpath('e:\speechres\commonmcode');
 addpath(fullfile(baseDir, 'vtcalcs_phasic\ADAPT_VC_APSTV2\BIN\Release'));
 addpath(fullfile(baseDir, 'optfit'));
+addpath(fullfile(baseDir, 'vtlen'));
 
 addpath(fullfile(baseDir, 'vtcalcs_phasic'));
 addpath(fullfile(baseDir, 'diva-1-3_phasic'));
