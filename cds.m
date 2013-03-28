@@ -210,7 +210,15 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'kape')))
         
     addpath(fullfile(dl,'speechres/kape/mcode'));
     
-    cdds    
+    cdds;
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'kape2')))
+    addpath(fullfile(dl,'speechres/commonmcode')); 
+    addpath(fullfile(dl,'speechres/kape2/ADAPT_VC_RATIO/BIN/release'));
+        
+    addpath(fullfile(dl,'speechres/kape2/mcode'));
+    
+    cdds;
 elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap')))
     addpath(fullfile(dl, 'speechres/commonmcode'));
     addpath(fullfile(dl, 'speechres/sdap/mcode'));
