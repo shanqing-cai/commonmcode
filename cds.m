@@ -62,7 +62,10 @@ elseif (nargin==1 && (isequal(varargin{1},'dys') || isequal(varargin{1},'DYS')))
 
 % 	addpath G:/scai/speechres/asr/htk/mcode	
 elseif (nargin==1 && (isequal(varargin{1},'rhythm-fmri') || isequal(varargin{1},'RHYTHM-fMRI')))
-	addpath(fullfile(dl,'speechres/rhythm-fmri/ADAPT_VC_RATIO_RHYTHM/BIN/release'));
+% 	addpath(fullfile(dl,'speechres/rhythm-fmri/ADAPT_VC_RATIO_RHYTHM/BIN/release'));
+%     addpath(fullfile(dl,'speechres/pip/Audapter-PIP/BIN/debug'));
+    addpath(fullfile(dl,'speechres/pip/Audapter-PIP/BIN/release'));
+
 	addpath(fullfile(dl,'speechres/commonmcode'));
 	addpath(fullfile(dl,'speechres/commonmcode/graph'));
 	addpath(fullfile(dl,'speechres/adapt/synutter'));
@@ -74,10 +77,12 @@ elseif (nargin==1 && (isequal(varargin{1},'rhythm-fmri') || isequal(varargin{1},
     addpath(fullfile(dl,'speechres/rhythm-fmri/asrcode'));
 	addpath(fullfile(dl,'speechres/rhythm-fmri/dacode'));
     
+%     addpath(fullfile(dl,'speechres/pip/mcode'));
+    
     addpath(fullfile(dl, 'speechres/utils/mexCommandWrapper/Release'));
 
-    cdds;
-    
+%     cdds;
+    cd(fullfile(dl,'speechres/rhythm-fmri/mcode'));
 elseif (nargin==1 && (isequal(lower(varargin{1}),'apst')))
 	addpath(fullfile(dl,'speechres/apst/ADAPT_VC_APST/BIN/release'));
 	addpath(fullfile(dl,'speechres/commonmcode'));
@@ -210,7 +215,15 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'kape')))
         
     addpath(fullfile(dl,'speechres/kape/mcode'));
     
-    cdds    
+    cdds;
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'kape2')))
+    addpath(fullfile(dl,'speechres/commonmcode')); 
+    addpath(fullfile(dl,'speechres/kape2/ADAPT_VC_RATIO/BIN/release'));
+        
+    addpath(fullfile(dl,'speechres/kape2/mcode'));
+    
+    cdds;
 elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap')))
     addpath(fullfile(dl, 'speechres/commonmcode'));
     addpath(fullfile(dl, 'speechres/sdap/mcode'));
@@ -219,6 +232,16 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap')))
     
     addpath(fullfile(dl, 'speechres/sdap/Audapter-DAF/BIN/release'));
     
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap2')))
+    addpath(fullfile(dl, 'speechres/commonmcode'));
+    addpath(fullfile(dl, 'speechres/sdap2/mcode'));
+    addpath(fullfile(dl, 'speechres/signals/leveltest'));
+	addpath(fullfile(dl, 'speechres/signals/maskNoise'));
+    
+    addpath(fullfile(dl, 'speechres/pip/Audapter-PIP/BIN/release'));
+%     addpath(fullfile(dl, 'speechres/sdap2/Audapter-DAF/BIN/release'));
+    
+    cd(fullfile(dl, 'speechres/sdap2/mcode'));
 elseif (nargin == 1 && (isequal(lower(varargin{1}), 'blueshift')))
     addpath(fullfile(dl, 'speechres/commonmcode'));
     addpath(fullfile(dl, 'speechres/blueshift/mcode'));
