@@ -281,6 +281,18 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'cca')))    % cca stands for
     addpath(fullfile(dl, 'speechres/pip/Audapter-2.0/BIN/release'));
     
     cdds;
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape_fmt')))    % cca stands for "consonant context and adaptation
+    addpath(fullfile(dl, 'speechres/commonmcode'));
+    addpath(fullfile(dl, 'speechres/ape_fmt/mcode'));
+    
+    if isequal(getHostName, 'SHS-NAMBLABNEW')
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release_UIUC'));
+    else
+        addpath(fullfile(dl, 'speechres/pip/Audapter-2.0-SDAP2/BIN/Release'));
+    end
+    
+    cd(fullfile(dl, 'speechres/ape_fmt/mcode'));
 end
 
 % if isdir('C:/marksTools/matlab')
