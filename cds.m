@@ -293,6 +293,8 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape_fmt')))    % cca stands
     end
     
     cd(fullfile(dl, 'speechres/ape_fmt/mcode'));
+    
+    rmpath('C:\LSSmatlab\speech\');
 end
 
 % if isdir('C:/marksTools/matlab')
