@@ -300,7 +300,11 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape_pitch')))    % CollabNW
     addpath(fullfile(dl, 'speechres/commonmcode'));
     addpath(fullfile(dl, 'speechres/ape_pitch/mcode'));
     
-    addpath(fullfile(dl, 'speechres/pip/Audapter-2.0-SDAP2/BIN/Release'));
+    if isequal(lower(getHostName), 'smcg_w510')
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release'));
+    else
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release_NWU'));
+    end   
     
     cd(fullfile(dl, 'speechres/ape_pitch/mcode'));    
 end
