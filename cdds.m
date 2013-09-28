@@ -1,5 +1,5 @@
 function varargout = cdds
-dl={'e:','z:','f:','c:', '/users/cais', '/media/DATA', 'e:/scai','e:/NT_Data/scai/','a:','b:','d:','g:','h:','i:','j:','k:','l:','m:','n:',...
+dl={'C:\Users\UCUSER\', 'e:','z:','f:','c:', '/users/cais', '/media/DATA', 'e:/scai','e:/NT_Data/scai/','a:','b:','d:','g:','h:','i:','j:','k:','l:','m:','n:',...
     'o:','p:','q:','r:','s:','t:','u:','v:','w:','x:','y:'};
 dirFound=0;
 for i1=1:length(dl)
@@ -24,12 +24,29 @@ elseif nargout == 1
     varargout{1} = fullfile(dl,'speechres');
 end
 
-audapterPath = which('TransShiftMex');
+% audapterPath = which('TransShiftMex');
+% if ~isempty(audapterPath)
+%     dns = splitstring(audapterPath, '\');
+%     
+%     t_dir = '';
+%     for i1 = 1 : length(dns) - 4
+%         t_dir = fullfile(t_dir, dns{i1});
+%     end
+%     t_dir = fullfile(t_dir, 'mcode');
+%     cd(t_dir);
+% end
+
+audapterPath = which('Audapter');
 if ~isempty(audapterPath)
     dns = splitstring(audapterPath, '\');
-    if length(dns) > 3
-        t_dir = fullfile(dns{1}, dns{2}, dns{3}, 'mcode');
-        cd(t_dir);
+    
+    t_dir = '';
+    for i1 = 1 : length(dns) - 5
+        t_dir = fullfile(t_dir, dns{i1});
     end
+    t_dir = fullfile(t_dir, 'scrama', 'mcode');
+    cd(t_dir);
 end
+
+
 return

@@ -1,6 +1,6 @@
 function cds(varargin)
 %%
-dl={'z:','e:','f:', '/users/cais/', '/media/DATA', 'c:', 'e:/scai/','e:/NT_Data/scai/','a:','b:','d:','g:','h:','i:','j:','k:','l:','m:','n:',...
+dl={'C:\Users\UCUSER\', 'z:','e:','f:', '/users/cais/', '/media/DATA', 'c:', 'e:/scai/','e:/NT_Data/scai/','a:','b:','d:','g:','h:','i:','j:','k:','l:','m:','n:',...
     'o:','p:','q:','r:','s:','t:','u:','v:','w:','x:','y:'};
 dirFound=0;
 for i1=1:length(dl)
@@ -224,6 +224,25 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'kape2')))
     addpath(fullfile(dl,'speechres/kape2/mcode'));
     
     cdds;
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'scrama')))
+    % Sleep and circadian rhythm and auditory-motor adaptation %
+    addpath(fullfile(dl,'speechres/commonmcode')); 
+
+    if isequal(getHostName, 'b412opti790')
+        addpath(fullfile(dl,'speechres/audapter/Audapter-2.0/BIN/release_UCh'));
+    else
+        addpath(fullfile(dl,'speechres/pip/Audapter-2.0/BIN/release_UCh'));
+    end
+
+    addpath(fullfile(dl,'speechres/scrama/mcode'));
+    addpath(fullfile(dl,'speechres/scrama/asrcode'));
+    
+    addpath(fullfile(dl,'speechres/Audapter-DA/mcode'));
+    addpath(fullfile(dl,'speechres/Audapter-DA/mcode/preproc'));
+    
+    cdds
+    
 elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap')))
     addpath(fullfile(dl, 'speechres/commonmcode'));
     addpath(fullfile(dl, 'speechres/sdap/mcode'));
