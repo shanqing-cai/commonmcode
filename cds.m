@@ -64,7 +64,7 @@ elseif (nargin==1 && (isequal(varargin{1},'dys') || isequal(varargin{1},'DYS')))
 elseif (nargin==1 && (isequal(varargin{1},'rhythm-fmri') || isequal(varargin{1},'RHYTHM-fMRI')))
 % 	addpath(fullfile(dl,'speechres/rhythm-fmri/ADAPT_VC_RATIO_RHYTHM/BIN/release'));
 %     addpath(fullfile(dl,'speechres/pip/Audapter-PIP/BIN/debug'));
-    addpath(fullfile(dl,'speechres/pip/Audapter-PIP/BIN/release'));
+    addpath(fullfile(dl,'speechres/pip/Audapter-PIP_RHY/BIN/release'));
 
 	addpath(fullfile(dl,'speechres/commonmcode'));
 	addpath(fullfile(dl,'speechres/commonmcode/graph'));
@@ -232,7 +232,7 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'scrama')))
     if isequal(getHostName, 'b412opti790')
         addpath(fullfile(dl,'speechres/audapter/Audapter-2.0/BIN/release_UCh'));
     else
-        addpath(fullfile(dl,'speechres/pip/Audapter-2.0/BIN/release_UCh'));
+        addpath(fullfile(dl,'speechres/pip/Audapter-2.0-SDAP2/BIN/release'));
     end
 
     addpath(fullfile(dl,'speechres/scrama/mcode'));
@@ -240,8 +240,8 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'scrama')))
     
     addpath(fullfile(dl,'speechres/Audapter-DA/mcode'));
     addpath(fullfile(dl,'speechres/Audapter-DA/mcode/preproc'));
-    
-    cdds
+   
+    cd(fullfile(dl,'speechres/scrama/mcode'));
     
 elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap')))
     addpath(fullfile(dl, 'speechres/commonmcode'));
@@ -257,7 +257,7 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'sdap2')))
     addpath(fullfile(dl, 'speechres/signals/leveltest'));
 	addpath(fullfile(dl, 'speechres/signals/maskNoise'));
     
-    addpath(fullfile(dl, 'speechres/pip/Audapter-PIP/BIN/release'));
+    addpath(fullfile(dl, 'speechres/pip/Audapter-2.0-SDAP2/BIN/release'));
 %     addpath(fullfile(dl, 'speechres/sdap2/Audapter-DAF/BIN/release'));
     
     cd(fullfile(dl, 'speechres/sdap2/mcode'));
@@ -277,6 +277,40 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'pip'))) % Pitch and intensi
     addpath(fullfile(dl, 'speechres/pip/Audapter-PIP/BIN/release'));
     
     cdds;
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'cca')))    % cca stands for "consonant context and adaptation
+    addpath(fullfile(dl, 'speechres/commonmcode'));
+    addpath(fullfile(dl, 'speechres/cca/mcode'));
+    
+    addpath(fullfile(dl, 'speechres/pip/Audapter-2.0/BIN/release'));
+    
+    cdds;
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape_fmt')))    % CollabUIUC
+    addpath(fullfile(dl, 'speechres/commonmcode'));
+    addpath(fullfile(dl, 'speechres/ape_fmt/mcode'));
+    
+    if isequal(getHostName, 'SHS-NAMBLABNEW')
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release_UIUC'));
+    else
+        addpath(fullfile(dl, 'speechres/pip/Audapter-2.0-SDAP2/BIN/Release'));
+    end
+    
+    cd(fullfile(dl, 'speechres/ape_fmt/mcode'));
+    
+    rmpath('C:\LSSmatlab\speech\');
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape_pitch')))    % CollabNWU
+    addpath(fullfile(dl, 'speechres/commonmcode'));
+    addpath(fullfile(dl, 'speechres/ape_pitch/mcode'));
+    
+    if isequal(lower(getHostName), 'smcg_w510')
+        addpath(fullfile(dl, 'speechres/pip/Audapter-2.0-SDAP2/BIN/Release'));
+    else
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release_NWU'));
+    end   
+    
+    cd(fullfile(dl, 'speechres/ape_pitch/mcode'));    
 end
 
 % if isdir('C:/marksTools/matlab')
