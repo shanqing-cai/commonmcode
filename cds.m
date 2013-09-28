@@ -236,8 +236,10 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'scrama')))
     end
 
     addpath(fullfile(dl,'speechres/scrama/mcode'));
-    addpath(fullfile(dl,'speechres/scrama/mcode/preproc'));
     addpath(fullfile(dl,'speechres/scrama/asrcode'));
+    
+    addpath(fullfile(dl,'speechres/Audapter-DA/mcode'));
+    addpath(fullfile(dl,'speechres/Audapter-DA/mcode/preproc'));
     
     cd(fullfile(dl,'speechres/scrama/mcode'));
     
