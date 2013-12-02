@@ -307,6 +307,18 @@ elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape_pitch')))    % CollabNW
     end   
     
     cd(fullfile(dl, 'speechres/ape_pitch/mcode'));    
+    
+elseif (nargin == 1 && (isequal(lower(varargin{1}), 'ape')))    % CollabNWU
+    addpath(fullfile(dl, 'speechres/commonmcode'));
+    addpath(fullfile(dl, 'speechres/ape/mcode'));
+    
+    if isequal(lower(getHostName), 'e530')
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release_USyd'));
+    else
+        addpath(fullfile(dl, 'speechres/audapter/Audapter-2.0/BIN/Release'));
+    end   
+    
+    cd(fullfile(dl, 'speechres/ape/mcode'));    
 end
 
 % if isdir('C:/marksTools/matlab')
