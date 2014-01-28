@@ -27,12 +27,10 @@ sftpfrommatlab.m
 showDependence.m
 solve_MFX_REML.m
 spear.m
-splitstring.m
 sshfrommatlab*
 student_range_stat.m
 tmcomptest.m
 WienerScalart96.m
-strsplit.m
 
 
 *~
