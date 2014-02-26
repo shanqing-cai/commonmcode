@@ -7,7 +7,7 @@ function info_log(infoStr, varargin)
 %%
 dateStr = datestr(now, 'yyyy-mm-ddTHH:MM:SS.FFF');  % Date string in the ISO format
 
-if isempty(fsic(varargin, '-warn'))
+if isempty(fsic(varargin, '-warn')) && isempty(fsic(varargin, '--warn'))
     typeStr = 'INFO';
     printPort = 1;
 else
