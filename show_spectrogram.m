@@ -27,4 +27,6 @@ if ~isempty(fsic(varargin, 'YLim'))
 end
 set(gca, 'YLim', [0, ylim]);
 set(gca, 'XLim', [t(1), t(end)]);
+
+colormap jet;
 return
